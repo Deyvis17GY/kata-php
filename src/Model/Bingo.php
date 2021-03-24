@@ -20,4 +20,8 @@ class Bingo
        
     }
 
+    public function NumeroLlamado($numero):bool{
+        return in_array($numero, $this->numeros);
+    } 
+
 }

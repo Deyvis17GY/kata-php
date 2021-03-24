@@ -11,6 +11,7 @@ class Tarjeta{
 
     //respeta las columnas no se pasen los limites
     public function isValid(): bool{
+       
         return $this->tamañoValido() && $this->limite();
     }
 
@@ -37,7 +38,8 @@ class Tarjeta{
             if($valorNull && is_null(($numero))){
                 continue;//Avanza
             }
-            if($numero <$minimo || $numero>$maximo){
+            if($numero < $minimo || $numero > $maximo){
+                
                 return false;
             }
         }
@@ -46,6 +48,16 @@ class Tarjeta{
 
     public function TarjetaLibreMedio(){
         return is_null($this->columnas['N'][2]);
+    }
+
+    public function NumeroObtenido(){
+        return array_merge(
+             $this->columnas['B'],
+             $this->columnas['I'],
+             $this->columnas['N'],
+             $this->columnas['G'],
+             $this->columnas['O'],           
+        );
     }
         
     
