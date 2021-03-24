@@ -10,7 +10,14 @@ class Bingo
     }
 
     public function NumerosBingo(){
-        return 1;
+
+        do {
+            $numero = rand(1,75);
+        } while (in_array($numero, $this->numeros));
+
+        $this->numeros[]= $numero;
+        return $numero;
+       
     }
 
 }

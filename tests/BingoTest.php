@@ -15,13 +15,15 @@ class BingoTest extends TestCase{
     }
 
     public function testNumerollamado75Veces(){
-        $caller = new Bingo();
-        $callNumbers = [];
+        $bingo= new Bingo();
+        $bingoNumeros = [];
         $rangoNumero = range(1,75);
         for($i=1; $i<=75; $i++){
-            $callNumbers[] = $caller->NumerosBingo();
+            $bingoNumeros[] = $bingo->NumerosBingo();
         }
-        $this->assertEquals($rangoNumero,$callNumbers);
+
+        sort($bingoNumeros);
+        $this->assertEquals($rangoNumero,$bingoNumeros);
     }
 
     
