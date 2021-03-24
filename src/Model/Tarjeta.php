@@ -15,6 +15,7 @@ class Tarjeta{
         return $this->tamañoValido() && $this->limite();
     }
 
+    //Funcion que valida el tamaño de las columnas
     private function tamañoValido():bool{
         foreach($this->columnas as $column){
             if(sizeof($column)!==5){
@@ -24,6 +25,7 @@ class Tarjeta{
         }
     }
 
+    //Funcion que pone limite a las columnas
     private function limite():bool{
         return 
         $this->elementoEntreColumnas($this->columnas['B'],1,15)
@@ -33,8 +35,10 @@ class Tarjeta{
         &&  $this->elementoEntreColumnas( $this->columnas['O'],61,75);
     }
     
+    //Funcion que muestra los elementos entre las columnas con sus valores
     private function elementoEntreColumnas($columna,$minimo,$maximo,$valorNull=false):bool{
         foreach($columna as $numero){
+            //Condicion que muestra que el numero es nulo
             if($valorNull && is_null(($numero))){
                 continue;//Avanza
             }
@@ -46,6 +50,7 @@ class Tarjeta{
         return true;
     }
 
+    //Funcion que pone un espacio en el medio de las colunas bingo
     public function TarjetaLibreMedio(){
         return is_null($this->columnas['N'][2]);
     }

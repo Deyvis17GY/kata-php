@@ -18,7 +18,7 @@ class BingoTest extends TestCase{
             $bingoNumeros[] = $bingo->NumerosBingo();
         }
 
-        sort($bingoNumeros);
+        sort($bingoNumeros);//Ordenar los numeros de 1 al 75
         $this->assertEquals($rangoNumero,$bingoNumeros);
     }
 

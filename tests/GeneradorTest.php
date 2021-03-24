@@ -14,6 +14,6 @@ class GeneradorTest extends TestCase{
     public function testTarjetaEspacioCentro(){
         $generador = new Generador();
         $tarjeta = $generador->generar();
-        $this->assertTrue($tarjeta->TarjetaLibreMedio());
+        $this->assertTrue($tarjeta->TarjetaLibreMedio());//Espacio al medio en la tarjeta
     }
 }

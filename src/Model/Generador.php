@@ -3,6 +3,7 @@
 use Models\Tarjeta;
 
 class Generador{
+    //Almacena los numeros en la calumna
     private $columna = [
         "B"=> [],
         "I"=> [],
@@ -20,9 +21,11 @@ class Generador{
 
         $this->columna['N']['2']=null;//Espacio vacio dentro de la tarjeta
 
+        //Generando los numeros a la Tarjeta
         return new Tarjeta($this->columna);
     }
 
+    //Funcion que pone el limite a las columnas
     public function limites($minimo,$maximo){
         $columna = [];
         
