@@ -5,8 +5,15 @@ use PHPUnit\Framework\TestCase;
 
 class GeneradorTest extends TestCase{
 
-    public function testNumeroLlamadoRango(){
+    public function testTarjetasNumerosValidosAndLimite(){
         $generador = new Generador();
-        $this->assertTrue(true);
+        $tarjeta = $generador->generar();
+        $this->assertTrue($tarjeta->isValid());
+    }
+
+    public function testTarjetaEspacioCentro(){
+        $generador = new Generador();
+        $tarjeta = $generador->generar();
+        $this->assertTrue($tarjeta->TarjetaLibreMedio());
     }
 }
