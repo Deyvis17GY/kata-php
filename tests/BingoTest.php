@@ -19,7 +19,7 @@ class BingoTest extends TestCase{
         }
 
         sort($bingoNumeros);//Ordenar los numeros de 1 al 75
-        $this->assertEquals($rangoNumero,$bingoNumeros);
+        $this->assertEquals($rangoNumero,$bingoNumeros);//Probamos con PHPunit si el valor es el esperado
     }
 
     
