@@ -1,4 +1,4 @@
-<?php namespace src;
+<?php 
 
 class Bingo
 {

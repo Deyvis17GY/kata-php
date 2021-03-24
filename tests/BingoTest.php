@@ -1,17 +1,13 @@
 <?php 
 use PHPUnit\Framework\TestCase;
-use src\Bingo;
-use src\BingoCaller;
-
-require __DIR__ . "/../src/Controlador/Bingo.php";
 
 class BingoTest extends TestCase{
 
     public function testNumeroLlamadoRango(){
-        $caller = new Bingo();
-        $number = $caller->NumerosBingo();
+        $bingo = new Bingo();
+        $numero = $bingo->NumerosBingo();
 
-        $this->assertTrue($number >= 1 && $number <=75);
+        $this->assertTrue($numero >= 1 && $numero <=75);
     }
 
     public function testNumerollamado75Veces(){
